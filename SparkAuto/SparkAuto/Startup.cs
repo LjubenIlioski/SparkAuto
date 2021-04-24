@@ -4,12 +4,14 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SparkAuto.Data;
+using SparkAuto.Email;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,8 +51,13 @@ namespace SparkAuto
                 .AddDefaultTokenProviders()
                 .AddDefaultUI()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddRazorPages().AddRazorRuntimeCompilation();
+            
 
+            services.AddSingleton<IEmailSender, EmailSender>();
+            services.Configure<EmailOptions>(Configuration);
+
+
+            services.AddRazorPages().AddRazorRuntimeCompilation();
 
             // IDK why :D 
             //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

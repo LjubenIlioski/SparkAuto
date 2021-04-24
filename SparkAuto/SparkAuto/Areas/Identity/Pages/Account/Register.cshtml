@@ -1,5 +1,6 @@
 ﻿@page
 @model RegisterModel
+@using SparkAuto.Utility
 @{
     ViewData["Title"] = "Register";
 }
@@ -99,6 +100,25 @@
                     <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                 </div>
             </div>
+
+            @if(User.IsInRole(SD.AdminEndUser))
+            { 
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4">
+                        <label asp-for="Input.IsAdmin"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Input.IsAdmin" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            }
+
+
+
+
+
             <div class="form-group">
                 <div class="row">
                     <div class="col-4">
@@ -108,6 +128,7 @@
                         <button type="submit" class="btn btn-success form-control ">Register</button>
                     </div>
                 </div>
+            </div>
         </form>
     </div>
 </div>
