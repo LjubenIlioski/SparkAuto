@@ -17,6 +17,6 @@ namespace SparkAuto.Data
 
         public DbSet<ServiceType> ServiceType { get; set; }
         public DbSet<ApplicationUser> ApplicationUser { get; set; }
-
+        public DbSet<Car> Car { get; set; }
     }
 }
