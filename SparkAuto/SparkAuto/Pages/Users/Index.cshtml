@@ -79,6 +79,11 @@
                             @Html.DisplayFor(m => item.Email)
                         </td>
                         <td>
+                           
+                            <img src="~/images/car.png" width="40px" />&nbsp; 
+                            <a asp-page="../Cars/Index" asp-route-userId="@item.Id" style="text-decoration:none;"> View Cars</a>
+                        </td>
+                        <td>
                             <a class="btn btn-primary text-white" asp-page="Edit" asp-route-Id="@item.Id">
                                 <i class="fas fa-edit"></i>
                             </a>
