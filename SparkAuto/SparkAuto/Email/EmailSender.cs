@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace SparkAuto.Email
 {
     public class EmailSender : IEmailSender
@@ -23,7 +24,8 @@ namespace SparkAuto.Email
 
         public Task SendEmailAsync(string email, string subject, string htmlMessage)
         {
-            var client = new SendGridClient(Options.SendGridKey);
+            var apiKey = "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";
+            var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
                 From = new EmailAddress("admin@spark.com", "Spark Auto"),
@@ -34,12 +36,9 @@ namespace SparkAuto.Email
 
             msg.AddTo(new EmailAddress(email));
 
-            client.SendEmailAsync(msg);
-
             try
             {
                 return client.SendEmailAsync(msg);
-
             }
             catch (Exception ex)
             {
