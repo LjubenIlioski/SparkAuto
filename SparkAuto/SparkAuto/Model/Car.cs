@@ -21,11 +21,11 @@ namespace SparkAuto.Model
         [Required]
         public string Model { get; set; }
 
-        [Required]
-        public string Style { get; set; }
         
-        [Required]
+        public string Style { get; set; }
+     
         public string Year { get; set; }
+
         [Required]
         public double Miles { get; set; }
 
