@@ -52,7 +52,7 @@ namespace SparkAuto
                 .AddDefaultUI()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-
+            services.AddTransient<IEmailSender, EmailSender>();
             services.AddSingleton<IEmailSender, EmailSender>();
             services.Configure<EmailOptions>(Configuration);
 
