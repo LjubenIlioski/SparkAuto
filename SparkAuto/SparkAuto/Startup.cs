@@ -70,6 +70,12 @@ namespace SparkAuto
 
             services.AddRazorPages().AddRazorRuntimeCompilation();
 
+            // The TempData provider cookie is not essential. Make it essential
+            // so TempData is functional when tracking is disabled.
+            services.Configure<CookieTempDataProviderOptions>(options => {
+                options.Cookie.IsEssential = true;
+            });
+
             // IDK why :D 
             //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

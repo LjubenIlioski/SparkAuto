@@ -54,7 +54,7 @@ namespace SparkAuto.Pages.Cars
             await _db.SaveChangesAsync();
             StatusMessage = "Car has been added sucessfully";
 
-            return RedirectToPage("Index", new { userId=Car.UserId});
+            return RedirectToPage("Index", new { userId=Car.UserId , StatusMessage});
         }
 
 
