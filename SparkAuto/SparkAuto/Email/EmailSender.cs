@@ -31,8 +31,8 @@ namespace SparkAuto.Email
             {
                 var credential = new NetworkCredential
                 {
-                    UserName = "ljubenilioskitest@gmail.com",  // replace with valid value
-                    Password = "ASA!BwHd5g3Thqy"  // replace with valid value
+                    UserName = "test@gmail.com",  // replace with valid value
+                    Password = "AS"  // replace with valid value
                 };
                 smtp.Credentials = credential;
                 smtp.Host = "smtp.gmail.com";
@@ -43,7 +43,7 @@ namespace SparkAuto.Email
                 message.Subject = subject;
                 message.Body = htmlMessage;
                 message.IsBodyHtml = true;
-                message.From = new MailAddress("ljubenilioskitest@gmail.com");
+                message.From = new MailAddress("test@gmail.com");
                 await smtp.SendMailAsync(message);
             }
 
@@ -52,9 +52,9 @@ namespace SparkAuto.Email
 
             //SendGrid Logic not working
 
-            //var apiKey = "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";
+            //var apiKey = "SG";
             //var client = new SendGridClient(apiKey);
-            //var from = new EmailAddress("ljuben_ilioski@hotmail.com", "Ljuben");
+            //var from = new EmailAddress("hotmail.com", "Ljuben");
             //var sub = subject;
             //var to = new EmailAddress(email, "Example User");
             //var plainTextContent = htmlMessage;
@@ -66,11 +66,11 @@ namespace SparkAuto.Email
 
             //SendGrid Logic not working
 
-            //var apiKey = "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";
+            //var apiKey = "SG";
             //var client = new SendGridClient(apiKey);
             //    var msg = new SendGridMessage()
             //    {
-            //        From = new EmailAddress("ljuben_ilioski@hotmail.com", "Ljuben"),
+            //        From = new EmailAddress("@hotmail.com", "Ljuben"),
             //        Subject = subject,
             //        PlainTextContent = htmlMessage,
             //        HtmlContent = htmlMessage,
